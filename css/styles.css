@@ -12,3 +12,23 @@ body {
   color: #212121;
   line-height: 1.5;
 }
+
+.gallery {
+  margin: 0 auto;
+  max-width: 1182px;
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+.gallery-item {
+  height: 200px;
+}
+.gallery-item {
+}
+.gallery-link {
+}
+.gallery-image:hover {
+  width: 376px;
+  height: 208px;
+}
