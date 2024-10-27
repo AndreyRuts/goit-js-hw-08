@@ -24,11 +24,10 @@ body {
 .gallery-item {
   height: 200px;
 }
-.gallery-item {
-}
-.gallery-link {
+.gallery-image {
+  transition: 0.5s ease;
 }
 .gallery-image:hover {
-  width: 376px;
-  height: 208px;
+  transition: 0.5s ease;
+  transform: scale(1.1);
 }

@@ -67,7 +67,24 @@ const images = [
 const [{ preview, original, description }] = images;
 const container = document.querySelector(".gallery");
 container.insertAdjacentHTML("beforeend", createMarkup(images));
+container.addEventListener("click", handleClick);
 
+function handleClick(event) {
+    event.preventDefault();
+    if (event.target === event.currentTarget) {
+        return;
+    }
+    const currentImage = event.target.closest(".gallery-image")
+    const chek = currentImage.alt
+    const exacImage = images.find((item) => item.description === chek);
+
+    const instance = basicLightbox.create(`
+        <div class="modal">
+            <img src="${exacImage.original}" alt="${exacImage.description}">
+        </div>
+        `);
+    instance.show();
+}
 
 function createMarkup(arr) {
     return arr.map(el => `<li class="gallery-item">
@@ -81,11 +98,5 @@ function createMarkup(arr) {
       height="200"
     />
   </a>
-</li>`).join("");
+</li>`).join("");  
 }
-
-
-console.log(container);
-
-
-
